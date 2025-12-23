@@ -21,6 +21,31 @@
         .arrow { font-size: 2em; color: #42affa; }
         .cost-graph { display: flex; justify-content: space-around; align-items: flex-end; height: 200px; margin: 20px 0; }
         .cost-bar { background: linear-gradient(to top, #e74c3c, #c0392b); width: 80px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; color: white; font-weight: bold; border-radius: 5px 5px 0 0; }
+        
+        /* Scrollable content for slides with lots of content */
+        .reveal .slides section.scrollable {
+            height: 100%;
+            overflow-y: auto;
+        }
+        .reveal .slides section .scroll-content {
+            max-height: 600px;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+        .reveal .slides section .scroll-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .reveal .slides section .scroll-content::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        .reveal .slides section .scroll-content::-webkit-scrollbar-thumb {
+            background: #42affa;
+            border-radius: 4px;
+        }
+        .reveal .slides section .scroll-content::-webkit-scrollbar-thumb:hover {
+            background: #2e8fda;
+        }
     </style>
 </head>
 <body>
@@ -215,7 +240,7 @@
                 
                 <section>
                     <h3>Mathematical Proof: Testing is Incomplete</h3>
-                    <div style="text-align: left; margin: 20px auto; max-width: 700px;">
+                    <div class="scroll-content" style="text-align: left; margin: 20px auto; max-width: 700px;">
                         <p><strong>Dijkstra's Principle (1970):</strong></p>
                         <blockquote style="background: #2c3e50; padding: 15px; border-left: 4px solid #42affa; margin: 20px 0;">
                             <em>"Program testing can be used to show the presence of bugs, but never to show their absence!"</em>
@@ -228,6 +253,7 @@
                             <li><strong>State Explosion:</strong> Number of possible program states grows exponentially</li>
                             <li><strong>Time Constraints:</strong> Testing all combinations would take more than the universe's lifetime</li>
                         </ul>
+                        <p style="margin-top: 15px; font-size: 0.85em;"><em>💡 Tip: Scroll down if you see more content</em></p>
                     </div>
                 </section>
                 
@@ -345,10 +371,10 @@
                 </section>
                 
                 <section>
-                    <h3>Verification Techniques</h3>
+                    <h3>Verification Techniques (Part 1)</h3>
                     <div style="text-align: left; margin: 20px auto; max-width: 700px;">
                         <h4 style="color: #42affa;">Static Techniques (No Code Execution)</h4>
-                        <ul style="font-size: 0.8em;">
+                        <ul style="font-size: 0.85em;">
                             <li><strong>Code Reviews:</strong> Peer examination of source code
                                 <ul style="font-size: 0.9em;">
                                     <li>Example: GitHub Pull Request reviews, pair programming</li>
@@ -360,14 +386,25 @@
                                     <li>Finds: Code smells, security vulnerabilities, style violations</li>
                                 </ul>
                             </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Verification Techniques (Part 2)</h3>
+                    <div style="text-align: left; margin: 20px auto; max-width: 700px;">
+                        <h4 style="color: #42affa;">More Static Techniques</h4>
+                        <ul style="font-size: 0.85em;">
                             <li><strong>Inspections:</strong> Formal, structured review meetings
                                 <ul style="font-size: 0.9em;">
                                     <li>Fagan Inspection process with defined roles</li>
+                                    <li>Systematic examination with moderator, reader, recorder</li>
                                 </ul>
                             </li>
                             <li><strong>Walkthroughs:</strong> Informal code review sessions
                                 <ul style="font-size: 0.9em;">
                                     <li>Author presents code to team for feedback</li>
+                                    <li>More educational and collaborative</li>
                                 </ul>
                             </li>
                         </ul>
@@ -375,10 +412,10 @@
                 </section>
                 
                 <section>
-                    <h3>Validation Techniques</h3>
+                    <h3>Validation Techniques (Part 1)</h3>
                     <div style="text-align: left; margin: 20px auto; max-width: 700px;">
                         <h4 style="color: #42affa;">Dynamic Techniques (Code Execution Required)</h4>
-                        <ul style="font-size: 0.8em;">
+                        <ul style="font-size: 0.85em;">
                             <li><strong>Unit Testing:</strong> Test individual components
                                 <ul style="font-size: 0.9em;">
                                     <li>Example: JUnit tests for Java methods, Jest for JavaScript</li>
@@ -389,6 +426,15 @@
                                     <li>Example: API integration tests, database connectivity</li>
                                 </ul>
                             </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Validation Techniques (Part 2)</h3>
+                    <div style="text-align: left; margin: 20px auto; max-width: 700px;">
+                        <h4 style="color: #42affa;">More Dynamic Techniques</h4>
+                        <ul style="font-size: 0.85em;">
                             <li><strong>System Testing:</strong> Test complete system
                                 <ul style="font-size: 0.9em;">
                                     <li>Example: End-to-end user workflows, performance testing</li>
@@ -435,7 +481,7 @@
                 
                 <section>
                     <h3>Why Choose Testing Over Other Methods?</h3>
-                    <div style="text-align: left; margin: 20px auto; max-width: 700px;">
+                    <div class="scroll-content" style="text-align: left; margin: 20px auto; max-width: 700px;">
                         <p><strong>Testing is chosen because:</strong></p>
                         <ul style="font-size: 0.85em;">
                             <li>🎯 <strong>Finds Real Bugs:</strong> Tests execute code in realistic scenarios
@@ -464,6 +510,7 @@
                                 </ul>
                             </li>
                         </ul>
+                        <p style="margin-top: 15px; font-size: 0.85em;"><em>💡 Tip: Scroll down if you see more content</em></p>
                     </div>
                 </section>
                 
