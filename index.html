@@ -1,1 +1,16 @@
-<script>Reveal.initialize({ scroll: true });</script>
+    <script>
+        Reveal.initialize({
+            height: 900,
+            width: 1600,
+            scroll: true
+        });
+    </script>
+
+    <style>
+    .reveal .slides {
+        overflow-y: scroll !important; /* Ensure scroll for overflowing content */
+    }
+    .reveal section {
+        overflow-y: scroll !important; /* Apply scrollbar to individual sections */
+    }
+    </style>
