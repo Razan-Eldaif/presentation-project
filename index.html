@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Quality Assurance and Testing</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/moon.css">
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+        .reveal ul { font-size: 0.8em; }
+        .reveal section img { border: none; background: none; box-shadow: none; }
+        .two-column { display: flex; gap: 20px; }
+        .two-column > div { flex: 1; }
+        .comparison-table { font-size: 0.7em; width: 100%; margin: 20px 0; }
+        .comparison-table td, .comparison-table th { border: 1px solid #555; padding: 10px; }
+        .highlight { color: #42affa; font-weight: bold; }
+        .chart-container { max-width: 600px; margin: 0 auto; }
+        .qa-flow { display: flex; justify-content: space-around; align-items: center; margin: 20px 0; }
+        .qa-flow-box { background: #42affa; padding: 15px; border-radius: 5px; min-width: 120px; text-align: center; }
+        .arrow { font-size: 2em; color: #42affa; }
+        .cost-graph { display: flex; justify-content: space-around; align-items: flex-end; height: 200px; margin: 20px 0; }
+        .cost-bar { background: linear-gradient(to top, #e74c3c, #c0392b); width: 80px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; color: white; font-weight: bold; border-radius: 5px 5px 0 0; }
+        .emoji { font-size: 3em; }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Title Slide -->
+            <section data-background-gradient="linear-gradient(to bottom, #283b5b, #17202a)">
+                <h1>Software Quality Assurance and Testing</h1>
+                <h3>A Comprehensive Guide to QA Excellence</h3>
+                <p><small>2-Hour Professional Presentation</small></p>
+            </section>
+
+            <!-- Section 1: Introduction -->
+            <section>
+                <section>
+                    <h2>Introduction to QA and Testing</h2>
+                    <p class="emoji">🎯</p>
+                </section>
+                
+                <section>
+                    <h3>What is Quality Assurance (QA)?</h3>
+                    <ul>
+                        <li><span class="highlight">QA</span> is a systematic process to ensure quality standards are met</li>
+                        <li>Focuses on <strong>preventing defects</strong> through process improvement</li>
+                        <li>Encompasses the entire software development lifecycle</li>
+                        <li>Proactive approach: "Are we building the product right?"</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>What is Testing?</h3>
+                    <ul>
+                        <li><span class="highlight">Testing</span> is the process of executing software to find defects</li>
+                        <li>Focuses on <strong>detecting defects</strong> in the product</li>
+                        <li>Part of the QA process, but not the entire process</li>
+                        <li>Reactive approach: "Did we build it correctly?"</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Importance of Software Quality Assurance</h3>
+                    <ul>
+                        <li>✅ <strong>Customer Satisfaction:</strong> Delivers reliable, high-quality products</li>
+                        <li>💰 <strong>Cost Reduction:</strong> Early defect detection saves money</li>
+                        <li>🛡️ <strong>Risk Mitigation:</strong> Prevents critical failures in production</li>
+                        <li>⚡ <strong>Faster Time-to-Market:</strong> Streamlined processes reduce delays</li>
+                        <li>🏆 <strong>Competitive Advantage:</strong> Quality products build reputation</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Example: Cost of Bugs</h3>
+                    <div class="cost-graph">
+                        <div class="cost-bar" style="height: 20px;">
+                            <span>$1</span>
+                            <small>Requirements</small>
+                        </div>
+                        <div class="cost-bar" style="height: 40px;">
+                            <span>$5</span>
+                            <small>Design</small>
+                        </div>
+                        <div class="cost-bar" style="height: 80px;">
+                            <span>$10</span>
+                            <small>Development</small>
+                        </div>
+                        <div class="cost-bar" style="height: 120px;">
+                            <span>$20</span>
+                            <small>Testing</small>
+                        </div>
+                        <div class="cost-bar" style="height: 200px;">
+                            <span>$100+</span>
+                            <small>Production</small>
+                        </div>
+                    </div>
+                    <p><strong>Key Insight:</strong> Fixing a bug in production can cost 100x more than fixing it during requirements!</p>
+                </section>
+                
+                <section>
+                    <h3>Real-World Impact</h3>
+                    <ul>
+                        <li>🚀 <strong>Mars Climate Orbiter (1999):</strong> $327M lost due to unit conversion error</li>
+                        <li>💳 <strong>Knight Capital (2012):</strong> $440M lost in 45 minutes from deployment bug</li>
+                        <li>🏥 <strong>Therac-25 (1985-1987):</strong> Radiation overdoses caused by software race condition</li>
+                        <li>✈️ <strong>Boeing 737 MAX (2018-2019):</strong> Software issues led to tragic accidents</li>
+                    </ul>
+                    <p><em>Quality isn't expensive—it's priceless!</em></p>
+                </section>
+            </section>
+
+            <!-- Section 2: The 'Why' of Testing -->
+            <section>
+                <section>
+                    <h2>The 'Why' of Testing</h2>
+                    <p class="emoji">🔍</p>
+                </section>
+                
+                <section>
+                    <h3>Why QA is Crucial</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4>🛡️ Reliability</h4>
+                            <ul>
+                                <li>Ensures consistent performance</li>
+                                <li>Builds user trust</li>
+                                <li>Reduces downtime</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>⚠️ Risk Reduction</h4>
+                            <ul>
+                                <li>Identifies vulnerabilities</li>
+                                <li>Prevents security breaches</li>
+                                <li>Protects brand reputation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <p><strong>Without QA:</strong> Higher failure rates, costly hotfixes, unhappy customers</p>
+                </section>
+                
+                <section>
+                    <h3>Real-World Software Failures</h3>
+                    <ul>
+                        <li>🎮 <strong>Cyberpunk 2077 (2020):</strong> Rushed release led to game-breaking bugs, refunds, delisting</li>
+                        <li>🏛️ <strong>Healthcare.gov (2013):</strong> Launch crashed due to insufficient testing</li>
+                        <li>🚗 <strong>Toyota Acceleration Issue (2009-2011):</strong> Software defect led to massive recall</li>
+                        <li>📱 <strong>Apple Maps (2012):</strong> Inaccurate data, missing features—public embarrassment</li>
+                        <li>💻 <strong>Windows Vista (2007):</strong> Performance and compatibility issues hurt adoption</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Cost Impact of Late Bug Detection</h3>
+                    <svg width="600" height="300" style="margin: 20px auto; display: block;">
+                        <defs>
+                            <linearGradient id="costGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#f39c12;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#e74c3c;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Axes -->
+                        <line x1="50" y1="250" x2="550" y2="250" stroke="white" stroke-width="2"/>
+                        <line x1="50" y1="50" x2="50" y2="250" stroke="white" stroke-width="2"/>
+                        <!-- Exponential curve -->
+                        <path d="M 50,245 Q 150,240 200,220 T 300,150 T 400,80 T 550,20" 
+                              fill="none" stroke="url(#costGradient)" stroke-width="4"/>
+                        <!-- Labels -->
+                        <text x="100" y="270" fill="white" font-size="12">Requirements</text>
+                        <text x="200" y="270" fill="white" font-size="12">Design</text>
+                        <text x="300" y="270" fill="white" font-size="12">Development</text>
+                        <text x="420" y="270" fill="white" font-size="12">Production</text>
+                        <text x="10" y="130" fill="white" font-size="14">Cost</text>
+                        <text x="270" y="290" fill="white" font-size="14">Development Phase</text>
+                    </svg>
+                    <p><strong>The earlier you catch bugs, the less they cost!</strong></p>
+                </section>
+            </section>
+
+            <!-- Section 3: QA vs Testing vs QC -->
+            <section>
+                <section>
+                    <h2>QA vs Testing vs QC</h2>
+                    <p class="emoji">🔄</p>
+                </section>
+                
+                <section>
+                    <h3>Definitions and Distinctions</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>QA (Quality Assurance)</th>
+                                <th>Testing</th>
+                                <th>QC (Quality Control)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Focus</strong></td>
+                                <td>Process-oriented</td>
+                                <td>Finding defects</td>
+                                <td>Product-oriented</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Approach</strong></td>
+                                <td>Proactive (Prevention)</td>
+                                <td>Active (Detection)</td>
+                                <td>Reactive (Correction)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>When</strong></td>
+                                <td>Throughout SDLC</td>
+                                <td>During & after dev</td>
+                                <td>After development</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Goal</strong></td>
+                                <td>Prevent defects</td>
+                                <td>Identify defects</td>
+                                <td>Verify quality</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Responsibility</strong></td>
+                                <td>Everyone</td>
+                                <td>Testers</td>
+                                <td>QC team</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                
+                <section>
+                    <h3>Common Misconceptions</h3>
+                    <h4 style="color: #e74c3c;">❌ QA = Testing</h4>
+                    <ul>
+                        <li><strong>Wrong:</strong> "QA team just tests the software"</li>
+                        <li><strong>Right:</strong> QA is about the <em>entire quality process</em>, testing is just one part</li>
+                    </ul>
+                    <br><br>
+                    <h4 style="color: #2ecc71;">✅ The Reality</h4>
+                    <ul>
+                        <li>QA includes: Process definition, standards, reviews, audits, training, metrics</li>
+                        <li>Testing is: Execution of test cases to find bugs</li>
+                        <li>QA can exist without testing, but testing should always be part of QA</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>The Relationship</h3>
+                    <div style="text-align: center; margin: 40px 0;">
+                        <div style="display: inline-block; border: 3px solid #42affa; border-radius: 150px; padding: 60px; position: relative;">
+                            <span style="font-size: 1.5em; font-weight: bold;">Quality Assurance</span>
+                            <div style="margin-top: 20px; border: 3px solid #2ecc71; border-radius: 100px; padding: 40px;">
+                                <span style="font-size: 1.2em; font-weight: bold;">Quality Control</span>
+                                <div style="margin-top: 15px; border: 3px solid #f39c12; border-radius: 50px; padding: 20px;">
+                                    <span style="font-size: 1em; font-weight: bold;">Testing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p><em>Testing is a subset of QC, which is a subset of QA</em></p>
+                </section>
+            </section>
+
+            <!-- Section 4: Software QA Processes and Standards -->
+            <section>
+                <section>
+                    <h2>QA Processes and Standards</h2>
+                    <p class="emoji">📋</p>
+                </section>
+                
+                <section>
+                    <h3>Phases of QA</h3>
+                    <div class="qa-flow">
+                        <div class="qa-flow-box">1. Planning</div>
+                        <span class="arrow">→</span>
+                        <div class="qa-flow-box">2. Design</div>
+                        <span class="arrow">→</span>
+                        <div class="qa-flow-box">3. Execution</div>
+                        <span class="arrow">→</span>
+                        <div class="qa-flow-box">4. Reporting</div>
+                    </div>
+                    <ul style="margin-top: 30px;">
+                        <li><strong>Planning:</strong> Define scope, objectives, resources, schedule</li>
+                        <li><strong>Design:</strong> Create test strategies, test cases, test data</li>
+                        <li><strong>Execution:</strong> Run tests, log defects, retest fixes</li>
+                        <li><strong>Reporting:</strong> Analyze results, metrics, lessons learned</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>QA in Different Methodologies</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4>🌊 Waterfall</h4>
+                            <ul style="font-size: 0.7em;">
+                                <li>Sequential phases</li>
+                                <li>Testing after development</li>
+                                <li>Comprehensive documentation</li>
+                                <li>Formal sign-offs</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>🔄 Agile</h4>
+                            <ul style="font-size: 0.7em;">
+                                <li>Continuous testing</li>
+                                <li>Testing in each sprint</li>
+                                <li>Collaboration with dev team</li>
+                                <li>Fast feedback loops</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <div style="text-align: center;">
+                        <h4>🚀 DevOps</h4>
+                        <ul style="font-size: 0.7em; display: inline-block; text-align: left;">
+                            <li>Shift-Left approach: Testing early and often</li>
+                            <li>CI/CD pipelines with automated testing</li>
+                            <li>Continuous monitoring in production</li>
+                            <li>Infrastructure as Code (IaC) testing</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Industry Standards</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4>📜 ISO 9001</h4>
+                            <ul style="font-size: 0.75em;">
+                                <li>Quality Management System</li>
+                                <li>Customer focus</li>
+                                <li>Process approach</li>
+                                <li>Continuous improvement</li>
+                                <li>Evidence-based decisions</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>⚡ IEEE Standards</h4>
+                            <ul style="font-size: 0.75em;">
+                                <li>IEEE 829: Test documentation</li>
+                                <li>IEEE 730: Quality assurance</li>
+                                <li>IEEE 1012: Verification & validation</li>
+                                <li>IEEE 12207: Software lifecycle</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <p><strong>Other Standards:</strong> CMMI, ISO/IEC 25010 (Quality Model), ISTQB</p>
+                </section>
+            </section>
+
+            <!-- Section 5: Types of Testing -->
+            <section>
+                <section>
+                    <h2>Types of Testing</h2>
+                    <p class="emoji">🧪</p>
+                </section>
+                
+                <section>
+                    <h3>Functional Testing</h3>
+                    <ul>
+                        <li><strong>Unit Testing:</strong> Test individual components/functions in isolation
+                            <ul style="font-size: 0.8em;">
+                                <li>Example: Testing a calculateTotal() function with various inputs</li>
+                            </ul>
+                        </li>
+                        <li><strong>Integration Testing:</strong> Test interactions between modules
+                            <ul style="font-size: 0.8em;">
+                                <li>Example: Testing database connection with API endpoints</li>
+                            </ul>
+                        </li>
+                        <li><strong>System Testing:</strong> Test complete, integrated system
+                            <ul style="font-size: 0.8em;">
+                                <li>Example: End-to-end user workflows</li>
+                            </ul>
+                        </li>
+                        <li><strong>Acceptance Testing:</strong> Verify system meets business requirements
+                            <ul style="font-size: 0.8em;">
+                                <li>Example: User Acceptance Testing (UAT) before go-live</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Non-Functional Testing</h3>
+                    <ul>
+                        <li><strong>Performance Testing:</strong> Test speed, scalability, stability
+                            <ul style="font-size: 0.8em;">
+                                <li>Load Testing, Stress Testing, Spike Testing</li>
+                            </ul>
+                        </li>
+                        <li><strong>Security Testing:</strong> Identify vulnerabilities and risks
+                            <ul style="font-size: 0.8em;">
+                                <li>Penetration Testing, Vulnerability Scanning, SQL Injection tests</li>
+                            </ul>
+                        </li>
+                        <li><strong>Usability Testing:</strong> Evaluate user experience
+                            <ul style="font-size: 0.8em;">
+                                <li>Navigation, Accessibility, User Interface consistency</li>
+                            </ul>
+                        </li>
+                        <li><strong>Others:</strong> Compatibility, Reliability, Recovery, Maintainability</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>The Testing Pyramid</h3>
+                    <div style="position: relative; width: 400px; height: 300px; margin: 30px auto;">
+                        <svg width="400" height="300">
+                            <!-- Base Layer - Unit Tests -->
+                            <polygon points="50,280 350,280 300,200 100,200" 
+                                     fill="#2ecc71" stroke="white" stroke-width="2"/>
+                            <text x="200" y="250" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Unit Tests</text>
+                            <text x="200" y="270" text-anchor="middle" fill="white" font-size="14">Fast, Many</text>
+                            
+                            <!-- Middle Layer - Integration Tests -->
+                            <polygon points="100,200 300,200 260,130 140,130" 
+                                     fill="#f39c12" stroke="white" stroke-width="2"/>
+                            <text x="200" y="170" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Integration</text>
+                            
+                            <!-- Top Layer - E2E Tests -->
+                            <polygon points="140,130 260,130 200,60" 
+                                     fill="#e74c3c" stroke="white" stroke-width="2"/>
+                            <text x="200" y="100" text-anchor="middle" fill="white" font-size="14" font-weight="bold">E2E/UI</text>
+                            <text x="200" y="115" text-anchor="middle" fill="white" font-size="12">Slow, Few</text>
+                        </svg>
+                    </div>
+                    <p><strong>Principle:</strong> More unit tests (fast, isolated), fewer E2E tests (slow, brittle)</p>
+                </section>
+                
+                <section>
+                    <h3>Functional vs Non-Functional: Comparison</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Functional Testing</th>
+                                <th>Non-Functional Testing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tests</strong></td>
+                                <td>What the system does</td>
+                                <td>How well the system performs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Focus</strong></td>
+                                <td>Features, operations</td>
+                                <td>Performance, usability, security</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Based On</strong></td>
+                                <td>Requirements, specifications</td>
+                                <td>Expectations, experience</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Examples</strong></td>
+                                <td>Login, checkout, search</td>
+                                <td>Load time, concurrent users, UX</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Done Before</strong></td>
+                                <td>Non-functional testing</td>
+                                <td>Going live</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><em>Both are essential for a quality product!</em></p>
+                </section>
+            </section>
+
+            <!-- Section 6: Modern QA Trends and Tools -->
+            <section>
+                <section>
+                    <h2>Modern QA Trends and Tools</h2>
+                    <p class="emoji">🚀</p>
+                </section>
+                
+                <section>
+                    <h3>Shift-Left Testing</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4>Traditional Approach</h4>
+                            <div style="font-size: 0.7em;">
+                                <p>Requirements → Design → Development → <span class="highlight">Testing</span></p>
+                                <p>❌ Testing happens late</p>
+                                <p>❌ Expensive bug fixes</p>
+                                <p>❌ Delayed feedback</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Shift-Left Approach</h4>
+                            <div style="font-size: 0.7em;">
+                                <p><span class="highlight">Testing</span> → Requirements → Design → Development → Testing</p>
+                                <p>✅ Test earlier in SDLC</p>
+                                <p>✅ Cheaper to fix bugs</p>
+                                <p>✅ Immediate feedback</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <p><strong>Benefits:</strong> Better quality, reduced costs, faster delivery</p>
+                </section>
+                
+                <section>
+                    <h3>Shift-Right Testing</h3>
+                    <ul>
+                        <li><strong>Concept:</strong> Testing in production with real users and real data</li>
+                        <li><strong>Techniques:</strong>
+                            <ul style="font-size: 0.8em;">
+                                <li>A/B Testing: Compare variants to optimize UX</li>
+                                <li>Canary Releases: Gradual rollout to subset of users</li>
+                                <li>Feature Flags: Toggle features on/off in production</li>
+                                <li>Chaos Engineering: Inject failures to test resilience</li>
+                                <li>Real User Monitoring (RUM): Track actual user behavior</li>
+                            </ul>
+                        </li>
+                        <li><strong>Goal:</strong> Validate assumptions with real-world usage</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Test Automation Tools</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4>🌐 Web Testing</h4>
+                            <ul style="font-size: 0.7em;">
+                                <li><strong>Selenium:</strong> Most popular, multi-browser</li>
+                                <li><strong>Cypress:</strong> Fast, developer-friendly</li>
+                                <li><strong>Playwright:</strong> Modern, multi-browser, fast</li>
+                                <li><strong>Puppeteer:</strong> Chrome DevTools Protocol</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>📱 Mobile Testing</h4>
+                            <ul style="font-size: 0.7em;">
+                                <li><strong>Appium:</strong> Cross-platform mobile automation</li>
+                                <li><strong>Espresso:</strong> Android native testing</li>
+                                <li><strong>XCTest:</strong> iOS native testing</li>
+                                <li><strong>Detox:</strong> React Native testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <div style="text-align: center;">
+                        <h4>⚡ API Testing</h4>
+                        <p style="font-size: 0.8em;"><strong>Postman, REST Assured, SoapUI, JMeter</strong></p>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>AI-Powered Testing</h3>
+                    <ul>
+                        <li><strong>Test Case Generation:</strong> AI analyzes code to create test cases automatically
+                            <ul style="font-size: 0.8em;">
+                                <li>Tools: Testim.io, Mabl, Applitools</li>
+                            </ul>
+                        </li>
+                        <li><strong>Self-Healing Tests:</strong> Tests automatically adapt to UI changes
+                            <ul style="font-size: 0.8em;">
+                                <li>Reduces maintenance overhead</li>
+                            </ul>
+                        </li>
+                        <li><strong>Visual Testing:</strong> AI detects visual regressions
+                            <ul style="font-size: 0.8em;">
+                                <li>Tools: Applitools Eyes, Percy</li>
+                            </ul>
+                        </li>
+                        <li><strong>Predictive Analytics:</strong> ML predicts high-risk areas for testing
+                            <ul style="font-size: 0.8em;">
+                                <li>Optimizes test coverage</li>
+                            </ul>
+                        </li>
+                        <li><strong>Intelligent Test Prioritization:</strong> AI determines which tests to run first</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Other Modern Trends</h3>
+                    <ul>
+                        <li>🤖 <strong>BDD/TDD:</strong> Behavior/Test-Driven Development (Cucumber, Jest)</li>
+                        <li>🔗 <strong>CI/CD Integration:</strong> Automated testing in pipelines (Jenkins, GitHub Actions, GitLab CI)</li>
+                        <li>☁️ <strong>Cloud Testing:</strong> Scalable test environments (BrowserStack, Sauce Labs)</li>
+                        <li>🐳 <strong>Containerization:</strong> Consistent test environments (Docker, Kubernetes)</li>
+                        <li>📊 <strong>Test Analytics:</strong> Data-driven insights (Test dashboards, metrics)</li>
+                        <li>♿ <strong>Accessibility Testing:</strong> WCAG compliance (axe, WAVE)</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Section 7: Challenges and Realities of QA -->
+            <section>
+                <section>
+                    <h2>Challenges and Realities of QA</h2>
+                    <p class="emoji">⚠️</p>
+                </section>
+                
+                <section>
+                    <h3>Common Challenges in Testing Roles</h3>
+                    <ul>
+                        <li>⏰ <strong>Time Constraints:</strong> "We need to ship tomorrow, just skip testing!"
+                            <ul style="font-size: 0.8em;">
+                                <li><em>Reality:</em> Tight deadlines often sacrifice quality</li>
+                            </ul>
+                        </li>
+                        <li>📝 <strong>Incomplete Requirements:</strong> Vague or changing specifications
+                            <ul style="font-size: 0.8em;">
+                                <li><em>Reality:</em> Hard to test what isn't clearly defined</li>
+                            </ul>
+                        </li>
+                        <li>🔧 <strong>Test Environment Issues:</strong> Environment doesn't match production
+                            <ul style="font-size: 0.8em;">
+                                <li><em>Reality:</em> "It works on my machine!"</li>
+                            </ul>
+                        </li>
+                        <li>🔄 <strong>Test Maintenance:</strong> Keeping automated tests up-to-date
+                            <ul style="font-size: 0.8em;">
+                                <li><em>Reality:</em> Flaky tests, deprecated selectors</li>
+                            </ul>
+                        </li>
+                        <li>🤷 <strong>Lack of Respect:</strong> "Anyone can test, right?"
+                            <ul style="font-size: 0.8em;">
+                                <li><em>Reality:</em> Testing is a skilled profession!</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Working with Other Teams</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4>🤝 Best Practices</h4>
+                            <ul style="font-size: 0.7em;">
+                                <li>Collaborate early and often</li>
+                                <li>Clear communication</li>
+                                <li>Shared quality ownership</li>
+                                <li>Constructive feedback</li>
+                                <li>Document everything</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>⚡ Common Tensions</h4>
+                            <ul style="font-size: 0.7em;">
+                                <li>Dev: "It's not a bug, it's a feature!"</li>
+                                <li>PM: "Can we just test the happy path?"</li>
+                                <li>Sales: "Client wants it today!"</li>
+                                <li>Support: "Users reported this months ago!"</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <p><strong>Key:</strong> Build relationships, educate stakeholders, advocate for quality</p>
+                </section>
+                
+                <section>
+                    <h3>Real-Life Bug Stories</h3>
+                    <div style="font-size: 0.8em;">
+                        <h4>🐛 Story 1: The Midnight Bug</h4>
+                        <p><em>"Our e-commerce site crashed every night at midnight. Why? A batch job tried to divide by the number of logged-in users... which was zero at midnight!"</em></p>
+                        
+                        <h4>🐛 Story 2: The Leap Year Bug</h4>
+                        <p><em>"App worked perfectly for 4 years. Then on Feb 29, 2020, it crashed. Developer forgot leap years exist!"</em></p>
+                        
+                        <h4>🐛 Story 3: The Case-Sensitive Password</h4>
+                        <p><em>"Users couldn't log in on mobile but desktop worked fine. Mobile app was converting passwords to lowercase before checking!"</em></p>
+                        
+                        <h4>🐛 Story 4: The Null Island</h4>
+                        <p><em>"GPS coordinates (0,0) showed thousands of users in the ocean. Turns out, that's the default when location fails!"</em></p>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>More Testing Realities</h3>
+                    <ul>
+                        <li>💭 <strong>"We can't test everything"</strong>
+                            <ul style="font-size: 0.8em;">
+                                <li>Use risk-based testing to prioritize</li>
+                            </ul>
+                        </li>
+                        <li>🎭 <strong>"Finding bugs doesn't make you popular"</strong>
+                            <ul style="font-size: 0.8em;">
+                                <li>But it makes the product better!</li>
+                            </ul>
+                        </li>
+                        <li>🔍 <strong>"The best testers think like hackers"</strong>
+                            <ul style="font-size: 0.8em;">
+                                <li>Creative, curious, boundary-pushing</li>
+                            </ul>
+                        </li>
+                        <li>📚 <strong>"Testing is 50% technical, 50% communication"</strong>
+                            <ul style="font-size: 0.8em;">
+                                <li>Writing clear bug reports is an art</li>
+                            </ul>
+                        </li>
+                        <li>🎯 <strong>"100% test coverage ≠ Bug-free"</strong>
+                            <ul style="font-size: 0.8em;">
+                                <li>Coverage is a metric, not a goal</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Section 8: Career in QA -->
+            <section>
+                <section>
+                    <h2>Career in QA</h2>
+                    <p class="emoji">💼</p>
+                </section>
+                
+                <section>
+                    <h3>Skills Required for QA</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4>🛠️ Technical Skills</h4>
+                            <ul style="font-size: 0.7em;">
+                                <li>Programming (Python, Java, JavaScript)</li>
+                                <li>Test automation frameworks</li>
+                                <li>SQL and database testing</li>
+                                <li>API testing (REST, GraphQL)</li>
+                                <li>Version control (Git)</li>
+                                <li>CI/CD tools</li>
+                                <li>Performance testing tools</li>
+                                <li>Security testing basics</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>🧠 Soft Skills</h4>
+                            <ul style="font-size: 0.7em;">
+                                <li>Analytical thinking</li>
+                                <li>Attention to detail</li>
+                                <li>Critical thinking</li>
+                                <li>Communication (written & verbal)</li>
+                                <li>Collaboration</li>
+                                <li>Problem-solving</li>
+                                <li>Curiosity and creativity</li>
+                                <li>Patience and persistence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>QA Career Growth Path</h3>
+                    <div style="text-align: left; margin: 30px auto; max-width: 600px;">
+                        <div style="margin: 15px 0; padding: 15px; background: #2c3e50; border-left: 5px solid #3498db; border-radius: 5px;">
+                            <strong>Junior QA Engineer / QA Tester</strong>
+                            <p style="font-size: 0.7em; margin: 5px 0;">Execute test cases, report bugs, learn tools</p>
+                        </div>
+                        <div style="text-align: center; font-size: 2em; color: #3498db;">↓</div>
+                        <div style="margin: 15px 0; padding: 15px; background: #2c3e50; border-left: 5px solid #2ecc71; border-radius: 5px;">
+                            <strong>QA Engineer / SDET</strong>
+                            <p style="font-size: 0.7em; margin: 5px 0;">Design tests, automate, mentor juniors</p>
+                        </div>
+                        <div style="text-align: center; font-size: 2em; color: #2ecc71;">↓</div>
+                        <div style="margin: 15px 0; padding: 15px; background: #2c3e50; border-left: 5px solid #f39c12; border-radius: 5px;">
+                            <strong>Senior QA Engineer / Lead QA</strong>
+                            <p style="font-size: 0.7em; margin: 5px 0;">Strategy, architecture, team leadership</p>
+                        </div>
+                        <div style="text-align: center; font-size: 2em; color: #f39c12;">↓</div>
+                        <div style="margin: 15px 0; padding: 15px; background: #2c3e50; border-left: 5px solid #e74c3c; border-radius: 5px;">
+                            <strong>QA Manager / QA Director</strong>
+                            <p style="font-size: 0.7em; margin: 5px 0;">Manage teams, budgets, quality standards</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Alternative Career Paths</h3>
+                    <ul>
+                        <li>🤖 <strong>Automation Architect:</strong> Design and implement automation frameworks</li>
+                        <li>🔒 <strong>Security Tester / Ethical Hacker:</strong> Specialize in security testing</li>
+                        <li>⚡ <strong>Performance Engineer:</strong> Focus on load, stress, and scalability testing</li>
+                        <li>💻 <strong>DevOps Engineer:</strong> Bridge development, testing, and operations</li>
+                        <li>📊 <strong>Quality Analyst:</strong> Focus on metrics, reporting, and process improvement</li>
+                        <li>🎓 <strong>QA Consultant / Trainer:</strong> Share expertise with organizations</li>
+                        <li>💡 <strong>Product Manager:</strong> Leverage QA experience for product decisions</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Certifications and Learning</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4>📜 Certifications</h4>
+                            <ul style="font-size: 0.7em;">
+                                <li>ISTQB (Foundation, Advanced, Expert)</li>
+                                <li>Certified Agile Tester (CAT)</li>
+                                <li>Certified Software Quality Analyst (CSQA)</li>
+                                <li>Certified Test Manager (CTM)</li>
+                                <li>Selenium Certifications</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>📚 Continuous Learning</h4>
+                            <ul style="font-size: 0.7em;">
+                                <li>Online courses (Udemy, Coursera)</li>
+                                <li>QA blogs and communities</li>
+                                <li>Testing conferences</li>
+                                <li>GitHub projects and contributions</li>
+                                <li>Practice on test automation projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <p><strong>Pro Tip:</strong> Stay curious, keep learning, and adapt to new tools and trends!</p>
+                </section>
+                
+                <section>
+                    <h3>Salary and Job Market</h3>
+                    <ul>
+                        <li>💰 <strong>Competitive Salaries:</strong> QA roles are well-compensated
+                            <ul style="font-size: 0.8em;">
+                                <li>Junior: $50-70K | Mid-Level: $70-100K | Senior: $100-140K+</li>
+                            </ul>
+                        </li>
+                        <li>📈 <strong>Growing Demand:</strong> Every software company needs QA
+                            <ul style="font-size: 0.8em;">
+                                <li>Especially automation and security specialists</li>
+                            </ul>
+                        </li>
+                        <li>🌍 <strong>Remote Opportunities:</strong> Many QA roles are remote-friendly</li>
+                        <li>🚀 <strong>Job Security:</strong> Quality will always be important</li>
+                    </ul>
+                    <br>
+                    <p><em>The future of QA is bright! 🌟</em></p>
+                </section>
+            </section>
+
+            <!-- Section 9: Interactive Elements -->
+            <section>
+                <section>
+                    <h2>Q&A and Discussion</h2>
+                    <p class="emoji">💬</p>
+                </section>
+                
+                <section>
+                    <h3>Let's Discuss!</h3>
+                    <h4 style="color: #42affa;">Interactive Questions:</h4>
+                    <ul style="font-size: 0.9em;">
+                        <li>❓ What's the most interesting bug you've ever found?</li>
+                        <li>❓ Have you worked with any test automation tools? Which ones?</li>
+                        <li>❓ What do you think is the biggest challenge in QA today?</li>
+                        <li>❓ How do you balance speed vs. quality in your projects?</li>
+                        <li>❓ What's your experience with CI/CD and automated testing?</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Scenario: You Be the Tester!</h3>
+                    <div style="background: #2c3e50; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                        <p><strong>Scenario:</strong> You're testing a login page. What would you test?</p>
+                    </div>
+                    <div style="font-size: 0.8em; text-align: left;">
+                        <p><strong>Think about:</strong></p>
+                        <ul>
+                            <li>Valid credentials</li>
+                            <li>Invalid credentials (wrong username, wrong password, both wrong)</li>
+                            <li>Empty fields</li>
+                            <li>SQL injection attempts</li>
+                            <li>Special characters</li>
+                            <li>Case sensitivity</li>
+                            <li>Password masking</li>
+                            <li>Remember me functionality</li>
+                            <li>Forgot password link</li>
+                            <li>Session timeout</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Poll Time!</h3>
+                    <h4 style="color: #42affa;">Quick Poll:</h4>
+                    <ol style="font-size: 0.9em;">
+                        <li>How many of you have found a bug in production? 🙋</li>
+                        <li>Who prefers manual testing over automation? 🤔</li>
+                        <li>Who thinks they could be a great QA engineer? 🚀</li>
+                        <li>Has anyone used Selenium or Cypress? 🤖</li>
+                        <li>Who's interested in a career in QA? ��</li>
+                    </ol>
+                </section>
+                
+                <section>
+                    <h3>Your Questions?</h3>
+                    <p class="emoji">🙋‍♀️ 🙋‍♂️</p>
+                    <br>
+                    <h4>Ask me anything about:</h4>
+                    <ul style="font-size: 0.9em;">
+                        <li>QA processes and best practices</li>
+                        <li>Testing tools and technologies</li>
+                        <li>Career paths in QA</li>
+                        <li>Real-world testing challenges</li>
+                        <li>Getting started in QA</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Conclusion -->
+            <section>
+                <section>
+                    <h2>Key Takeaways</h2>
+                    <ul>
+                        <li>✅ <strong>QA ≠ Testing:</strong> QA is the process, testing is one part of it</li>
+                        <li>✅ <strong>Test Early:</strong> Shift-Left saves time and money</li>
+                        <li>✅ <strong>Embrace Automation:</strong> But don't forget exploratory testing</li>
+                        <li>✅ <strong>Quality is Everyone's Job:</strong> Not just the QA team</li>
+                        <li>✅ <strong>Stay Curious:</strong> Technology evolves, keep learning</li>
+                        <li>✅ <strong>Communication Matters:</strong> Technical and soft skills are both crucial</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h2>Resources</h2>
+                    <div style="font-size: 0.8em; text-align: left;">
+                        <h4>📚 Books:</h4>
+                        <ul>
+                            <li>"The Art of Software Testing" by Glenford Myers</li>
+                            <li>"Agile Testing" by Lisa Crispin & Janet Gregory</li>
+                            <li>"Lessons Learned in Software Testing" by Cem Kaner</li>
+                        </ul>
+                        <h4>🌐 Websites:</h4>
+                        <ul>
+                            <li>Ministry of Testing: <em>ministryoftesting.com</em></li>
+                            <li>Software Testing Help: <em>softwaretestinghelp.com</em></li>
+                            <li>ISTQB: <em>istqb.org</em></li>
+                        </ul>
+                        <h4>🎓 Courses:</h4>
+                        <ul>
+                            <li>Test Automation University (free)</li>
+                            <li>Udemy: Selenium, Cypress courses</li>
+                            <li>Coursera: Software Testing specializations</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section data-background-gradient="linear-gradient(to bottom, #283b5b, #17202a)">
+                    <h1>Thank You!</h1>
+                    <p class="emoji">🙏</p>
+                    <h3>Quality is not an act, it is a habit.</h3>
+                    <p><em>— Aristotle</em></p>
+                    <br>
+                    <p>Questions? Let's connect!</p>
+                </section>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: true,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            controls: true,
+            progress: true,
+            center: true,
+            touch: true,
+            loop: false,
+            rtl: false,
+            navigationMode: 'default',
+            shuffle: false,
+            fragments: true,
+            fragmentInURL: true,
+            embedded: false,
+            help: true,
+            pause: true,
+            showNotes: false,
+            autoPlayMedia: null,
+            preloadIframes: null,
+            autoSlide: 0,
+            autoSlideStoppable: true,
+            autoSlideMethod: null,
+            defaultTiming: null,
+            mouseWheel: false,
+            display: 'block',
+            hideInactiveCursor: true,
+            hideCursorTime: 5000,
+            pdfMaxPagesPerSlide: 1,
+            pdfSeparateFragments: true,
+            pdfPageHeightOffset: -1,
+            width: 960,
+            height: 700,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 2.0
+        });
+    </script>
+</body>
+</html>
