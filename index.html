@@ -33,6 +33,35 @@
                 <h1>Software Quality Assurance and Testing</h1>
                 <h3>A Comprehensive Guide to QA Excellence</h3>
                 <p><small>2-Hour Professional Presentation</small></p>
+                <br>
+                <p style="font-size: 0.8em; margin-top: 30px;">
+                    <strong>Presented by: Razan Abdalla</strong><br>
+                    <small>QC Engineer at Aqar</small><br>
+                    <small>Teaching Assistant, Sudan University of Science and Technology</small><br>
+                    <small>Software Engineering Bachelor Degree</small>
+                </p>
+            </section>
+
+            <!-- Presenter Bio -->
+            <section data-background-gradient="linear-gradient(to bottom, #283b5b, #17202a)">
+                <h2>About the Presenter</h2>
+                <div style="text-align: left; margin: 30px auto; max-width: 700px; font-size: 0.85em;">
+                    <p><strong>🎓 Academic Background</strong></p>
+                    <ul style="font-size: 0.9em;">
+                        <li>Bachelor's Degree in Software Engineering</li>
+                        <li>Sudan University of Science and Technology</li>
+                        <li>Teaching Assistant at the same university</li>
+                    </ul>
+                    <br>
+                    <p><strong>💼 Professional Experience</strong></p>
+                    <ul style="font-size: 0.9em;">
+                        <li><strong>Current:</strong> QC Engineer at Aqar</li>
+                        <li><strong>2022-2023:</strong> Software Testing Intern at Nile Center for Technology Research</li>
+                        <li><strong>Post-2023:</strong> Volunteer work with local non-profit organizations</li>
+                    </ul>
+                    <br>
+                    <p><em>"Passionate about ensuring software quality and sharing knowledge with the community"</em></p>
+                </div>
             </section>
 
             <!-- Section 1: Introduction -->
@@ -179,6 +208,305 @@
                         <text x="270" y="290" fill="white" font-size="14">Development Phase</text>
                     </svg>
                     <p><strong>The earlier you catch bugs, the less they cost!</strong></p>
+                </section>
+            </section>
+
+            <!-- New Section: Why Testing is Always Incomplete -->
+            <section>
+                <section>
+                    <h2>The Fundamental Limitation: Testing is Always Incomplete</h2>
+                    <p class="emoji">🔬</p>
+                </section>
+                
+                <section>
+                    <h3>Mathematical Proof: Testing is Incomplete</h3>
+                    <div style="text-align: left; margin: 20px auto; max-width: 700px;">
+                        <p><strong>Dijkstra's Principle (1970):</strong></p>
+                        <blockquote style="background: #2c3e50; padding: 15px; border-left: 4px solid #42affa; margin: 20px 0;">
+                            <em>"Program testing can be used to show the presence of bugs, but never to show their absence!"</em>
+                            <br><small>— Edsger W. Dijkstra</small>
+                        </blockquote>
+                        
+                        <p><strong>Why is this true?</strong></p>
+                        <ul style="font-size: 0.85em;">
+                            <li><strong>Infinite Input Space:</strong> Most programs have an infinite or astronomically large number of possible inputs</li>
+                            <li><strong>State Explosion:</strong> Number of possible program states grows exponentially</li>
+                            <li><strong>Time Constraints:</strong> Testing all combinations would take more than the universe's lifetime</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Example: Simple Calculator</h3>
+                    <div style="font-size: 0.85em;">
+                        <p>Consider a simple calculator with two 32-bit integers:</p>
+                        <div style="background: #2c3e50; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                            <p><strong>Possible test cases:</strong></p>
+                            <p style="color: #42affa; font-size: 1.2em;">2³² × 2³² = 18,446,744,073,709,551,616 combinations</p>
+                            <p><em>That's over 18 quintillion test cases!</em></p>
+                        </div>
+                        <ul style="font-size: 0.9em;">
+                            <li>Testing at 1 million cases per second = <strong>584,942 years</strong></li>
+                            <li>Even with 4 operations (+, -, ×, ÷) = <strong>2.3 million years</strong></li>
+                        </ul>
+                        <br>
+                        <p><strong>Conclusion:</strong> Exhaustive testing is impossible for even simple programs!</p>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>The Pesticide Paradox</h3>
+                    <div style="text-align: left; margin: 20px auto; max-width: 700px;">
+                        <p><strong>Concept:</strong> Running the same tests repeatedly will no longer find new bugs</p>
+                        <ul style="font-size: 0.85em;">
+                            <li>🐛 <strong>First Run:</strong> Tests find many defects</li>
+                            <li>🔄 <strong>After Fixes:</strong> Same tests find fewer defects</li>
+                            <li>✅ <strong>Eventually:</strong> Tests pass but hidden bugs remain</li>
+                            <li>💡 <strong>Solution:</strong> Tests must be regularly reviewed and updated</li>
+                        </ul>
+                        <br>
+                        <div style="background: #e74c3c; padding: 15px; border-radius: 5px; margin-top: 20px;">
+                            <strong>⚠️ Key Insight:</strong> Passing all tests ≠ Bug-free software
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Risk-Based Testing: The Practical Solution</h3>
+                    <p>Since we can't test everything, we must <strong>prioritize</strong>:</p>
+                    <div class="two-column">
+                        <div>
+                            <h4>High Priority Testing</h4>
+                            <ul style="font-size: 0.75em;">
+                                <li>Critical business functions</li>
+                                <li>High-risk features</li>
+                                <li>Frequently used paths</li>
+                                <li>Security-sensitive areas</li>
+                                <li>Complex algorithms</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Lower Priority Testing</h4>
+                            <ul style="font-size: 0.75em;">
+                                <li>Edge cases with low impact</li>
+                                <li>Rarely used features</li>
+                                <li>Non-critical UI elements</li>
+                                <li>Already stable components</li>
+                                <li>Low-risk integrations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <p style="font-size: 0.85em;"><em>Focus testing efforts where they matter most!</em></p>
+                </section>
+            </section>
+
+            <!-- New Section: Verification & Validation -->
+            <section>
+                <section>
+                    <h2>Verification & Validation Techniques</h2>
+                    <p class="emoji">✅</p>
+                </section>
+                
+                <section>
+                    <h3>V&V: Two Sides of Quality</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Verification</th>
+                                <th>Validation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Question</strong></td>
+                                <td>"Are we building the product right?"</td>
+                                <td>"Are we building the right product?"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Focus</strong></td>
+                                <td>Process and conformance</td>
+                                <td>Product and user needs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>When</strong></td>
+                                <td>During development</td>
+                                <td>After development</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Methods</strong></td>
+                                <td>Reviews, inspections, walkthroughs</td>
+                                <td>Testing, user acceptance</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Goal</strong></td>
+                                <td>Meet specifications</td>
+                                <td>Meet user expectations</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <p><strong>Both are essential for quality software!</strong></p>
+                </section>
+                
+                <section>
+                    <h3>Verification Techniques</h3>
+                    <div style="text-align: left; margin: 20px auto; max-width: 700px;">
+                        <h4 style="color: #42affa;">Static Techniques (No Code Execution)</h4>
+                        <ul style="font-size: 0.8em;">
+                            <li><strong>Code Reviews:</strong> Peer examination of source code
+                                <ul style="font-size: 0.9em;">
+                                    <li>Example: GitHub Pull Request reviews, pair programming</li>
+                                </ul>
+                            </li>
+                            <li><strong>Static Analysis:</strong> Automated code scanning
+                                <ul style="font-size: 0.9em;">
+                                    <li>Tools: SonarQube, ESLint, Checkstyle, PMD</li>
+                                    <li>Finds: Code smells, security vulnerabilities, style violations</li>
+                                </ul>
+                            </li>
+                            <li><strong>Inspections:</strong> Formal, structured review meetings
+                                <ul style="font-size: 0.9em;">
+                                    <li>Fagan Inspection process with defined roles</li>
+                                </ul>
+                            </li>
+                            <li><strong>Walkthroughs:</strong> Informal code review sessions
+                                <ul style="font-size: 0.9em;">
+                                    <li>Author presents code to team for feedback</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Validation Techniques</h3>
+                    <div style="text-align: left; margin: 20px auto; max-width: 700px;">
+                        <h4 style="color: #42affa;">Dynamic Techniques (Code Execution Required)</h4>
+                        <ul style="font-size: 0.8em;">
+                            <li><strong>Unit Testing:</strong> Test individual components
+                                <ul style="font-size: 0.9em;">
+                                    <li>Example: JUnit tests for Java methods, Jest for JavaScript</li>
+                                </ul>
+                            </li>
+                            <li><strong>Integration Testing:</strong> Test component interactions
+                                <ul style="font-size: 0.9em;">
+                                    <li>Example: API integration tests, database connectivity</li>
+                                </ul>
+                            </li>
+                            <li><strong>System Testing:</strong> Test complete system
+                                <ul style="font-size: 0.9em;">
+                                    <li>Example: End-to-end user workflows, performance testing</li>
+                                </ul>
+                            </li>
+                            <li><strong>Acceptance Testing:</strong> Validate with real users
+                                <ul style="font-size: 0.9em;">
+                                    <li>Example: UAT (User Acceptance Testing), beta testing</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Real-World Example: E-Commerce Checkout</h3>
+                    <div style="font-size: 0.8em; text-align: left; margin: 0 auto; max-width: 750px;">
+                        <div class="two-column">
+                            <div style="background: #2c3e50; padding: 15px; border-radius: 5px;">
+                                <h4 style="color: #42affa; margin-top: 0;">Verification Activities</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li>Review payment gateway integration code</li>
+                                    <li>Inspect security implementation (encryption)</li>
+                                    <li>Check compliance with PCI-DSS standards</li>
+                                    <li>Static analysis for SQL injection vulnerabilities</li>
+                                    <li>Code review for proper error handling</li>
+                                </ul>
+                            </div>
+                            <div style="background: #2c3e50; padding: 15px; border-radius: 5px;">
+                                <h4 style="color: #2ecc71; margin-top: 0;">Validation Activities</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li>Test checkout with various payment methods</li>
+                                    <li>Validate order confirmation emails</li>
+                                    <li>Test with different browsers and devices</li>
+                                    <li>Verify inventory updates after purchase</li>
+                                    <li>UAT with real customers</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br>
+                        <p><strong>Result:</strong> Verification catches issues early (cheaper), Validation ensures it works for users (valuable)</p>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Why Choose Testing Over Other Methods?</h3>
+                    <div style="text-align: left; margin: 20px auto; max-width: 700px;">
+                        <p><strong>Testing is chosen because:</strong></p>
+                        <ul style="font-size: 0.85em;">
+                            <li>🎯 <strong>Finds Real Bugs:</strong> Tests execute code in realistic scenarios
+                                <ul style="font-size: 0.9em;">
+                                    <li>Example: A code review might miss a race condition that testing reveals</li>
+                                </ul>
+                            </li>
+                            <li>💡 <strong>Validates Assumptions:</strong> Confirms the software does what users expect
+                                <ul style="font-size: 0.9em;">
+                                    <li>Example: Requirements say "fast," but only testing measures actual speed</li>
+                                </ul>
+                            </li>
+                            <li>🔄 <strong>Repeatable:</strong> Automated tests can run thousands of times
+                                <ul style="font-size: 0.9em;">
+                                    <li>Example: Regression tests ensure new code doesn't break existing features</li>
+                                </ul>
+                            </li>
+                            <li>📊 <strong>Measurable:</strong> Provides concrete metrics (pass/fail, coverage, performance)
+                                <ul style="font-size: 0.9em;">
+                                    <li>Example: "95% code coverage" or "API responds in <200ms"</li>
+                                </ul>
+                            </li>
+                            <li>🛡️ <strong>Catches Integration Issues:</strong> Reviews can't test how components work together
+                                <ul style="font-size: 0.9em;">
+                                    <li>Example: Payment gateway works, cart works, but together they fail</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>The V-Model: Verification & Validation in SDLC</h3>
+                    <div style="position: relative; margin: 30px auto;">
+                        <svg width="600" height="400" style="margin: 0 auto; display: block;">
+                            <!-- Left side: Development -->
+                            <line x1="100" y1="50" x2="100" y2="350" stroke="#42affa" stroke-width="3"/>
+                            <line x1="100" y1="350" x2="500" y2="350" stroke="#42affa" stroke-width="3"/>
+                            <line x1="500" y1="350" x2="500" y2="50" stroke="#42affa" stroke-width="3"/>
+                            
+                            <!-- Left side labels -->
+                            <text x="10" y="70" fill="white" font-size="13">Requirements</text>
+                            <text x="10" y="140" fill="white" font-size="13">Design</text>
+                            <text x="10" y="210" fill="white" font-size="13">Architecture</text>
+                            <text x="10" y="280" fill="white" font-size="13">Module Design</text>
+                            <text x="230" y="370" fill="white" font-size="13">Implementation</text>
+                            
+                            <!-- Right side labels -->
+                            <text x="510" y="70" fill="white" font-size="13">Acceptance Testing</text>
+                            <text x="510" y="140" fill="white" font-size="13">System Testing</text>
+                            <text x="510" y="210" fill="white" font-size="13">Integration Testing</text>
+                            <text x="510" y="280" fill="white" font-size="13">Unit Testing</text>
+                            
+                            <!-- Arrows showing correspondence -->
+                            <line x1="120" y1="65" x2="480" y2="65" stroke="#2ecc71" stroke-width="2" stroke-dasharray="5,5"/>
+                            <line x1="120" y1="135" x2="480" y2="135" stroke="#2ecc71" stroke-width="2" stroke-dasharray="5,5"/>
+                            <line x1="120" y1="205" x2="480" y2="205" stroke="#2ecc71" stroke-width="2" stroke-dasharray="5,5"/>
+                            <line x1="120" y1="275" x2="480" y2="275" stroke="#2ecc71" stroke-width="2" stroke-dasharray="5,5"/>
+                            
+                            <!-- Labels -->
+                            <text x="180" y="30" fill="#42affa" font-size="14" font-weight="bold">Verification</text>
+                            <text x="420" y="30" fill="#2ecc71" font-size="14" font-weight="bold">Validation</text>
+                        </svg>
+                    </div>
+                    <p style="font-size: 0.85em;"><strong>Each development phase has corresponding testing phase</strong></p>
                 </section>
             </section>
 

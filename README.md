@@ -2,19 +2,24 @@
 
 A comprehensive 2-hour presentation on Software Quality Assurance and Testing, created with [reveal.js](https://revealjs.com/).
 
+**Presented by:** Razan Abdalla, QC Engineer at Aqar
+
 ## 📋 Presentation Content
 
 This presentation covers the following sections:
 
+0. **About the Presenter** - Professional background and experience
 1. **Introduction** - Definitions, importance, and cost of bugs
 2. **The 'Why' of Testing** - Reliability, risk reduction, and real-world failures
-3. **QA vs Testing vs QC** - Distinctions and common misconceptions
-4. **QA Processes and Standards** - Phases, methodologies (Waterfall, Agile, DevOps), and industry standards (ISO, IEEE)
-5. **Types of Testing** - Functional and non-functional testing with testing pyramid
-6. **Modern QA Trends and Tools** - Shift-Left/Right, automation tools (Selenium, Cypress), AI-powered testing
-7. **Challenges and Realities** - Common challenges, team collaboration, and real bug stories
-8. **Career in QA** - Skills, growth paths, certifications, and job market
-9. **Interactive Elements** - Q&A prompts and engagement activities
+3. **Testing is Always Incomplete** - Mathematical proof, Dijkstra's principle, pesticide paradox, and risk-based testing
+4. **Verification & Validation Techniques** - V&V comparison, static/dynamic techniques, real-world examples, V-Model, and why we choose testing
+5. **QA vs Testing vs QC** - Distinctions and common misconceptions
+6. **QA Processes and Standards** - Phases, methodologies (Waterfall, Agile, DevOps), and industry standards (ISO, IEEE)
+7. **Types of Testing** - Functional and non-functional testing with testing pyramid
+8. **Modern QA Trends and Tools** - Shift-Left/Right, automation tools (Selenium, Cypress), AI-powered testing
+9. **Challenges and Realities** - Common challenges, team collaboration, and real bug stories
+10. **Career in QA** - Skills, growth paths, certifications, and job market
+11. **Interactive Elements** - Q&A prompts and engagement activities
 
 ## 🚀 How to View the Presentation
 
