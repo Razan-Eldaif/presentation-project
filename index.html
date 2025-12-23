@@ -1,16 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Quality Assurance and Testing</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/moon.css">
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+        .reveal ul { font-size: 0.8em; }
+        .reveal section img { border: none; background: none; box-shadow: none; }
+        .two-column { display: flex; gap: 20px; }
+        .two-column > div { flex: 1; }
+        .comparison-table { font-size: 0.7em; width: 100%; margin: 20px 0; }
+        .comparison-table td, .comparison-table th { border: 1px solid #555; padding: 10px; }
+        .highlight { color: #42affa; font-weight: bold; }
+        .chart-container { max-width: 600px; margin: 0 auto; }
+        .qa-flow { display: flex; justify-content: space-around; align-items: center; margin: 20px 0; }
+        .qa-flow-box { background: #42affa; padding: 15px; border-radius: 5px; min-width: 120px; text-align: center; }
+        .arrow { font-size: 2em; color: #42affa; }
+        .cost-graph { display: flex; justify-content: space-around; align-items: flex-end; height: 200px; margin: 20px 0; }
+        .cost-bar { background: linear-gradient(to top, #e74c3c, #c0392b); width: 80px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; color: white; font-weight: [...] }
+        .reveal .slides { overflow-y: auto !important; }
+        .reveal section { overflow-y: auto !important; }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Title Slide -->
+            <section data-background-gradient="linear-gradient(to bottom, #283b5b, #17202a)">
+                <h1>Software Quality Assurance and Testing</h1>
+                <h3>A Comprehensive Guide to QA Excellence</h3>
+                <br>
+                <p style="font-size: 0.8em; margin-top: 30px;">
+                    <strong>Presented by: Razan Abdalla</strong><br>
+                    <small>QC Engineer at Aqar</small><br>
+                    <small>Teaching Assistant, Sudan University of Science and Technology</small><br>
+                    <small>Software Engineering Bachelor Degree</small>
+                </p>
+            </section>
+
+            <!-- Other Sections Omitted For Brevity -->
+        </div>
+    </div>
+
     <script>
         Reveal.initialize({
-            height: 900,
-            width: 1600,
-            scroll: true
+            height: 720,
+            width: 1280,
+            scroll: true,
+            embedded: true
         });
     </script>
-
-    <style>
-    .reveal .slides {
-        overflow-y: scroll !important; /* Ensure scroll for overflowing content */
-    }
-    .reveal section {
-        overflow-y: scroll !important; /* Apply scrollbar to individual sections */
-    }
-    </style>
+</body>
+</html>
