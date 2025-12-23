@@ -4,6 +4,11 @@ A comprehensive 2-hour presentation on Software Quality Assurance and Testing, c
 
 **Presented by:** Razan Abdalla, QC Engineer at Aqar
 
+## 📦 Available Formats
+
+- **Web Version (HTML)**: `index.html` - Interactive reveal.js presentation
+- **PowerPoint Version (PPTX)**: `QA_Testing_Presentation.pptx` - Standalone PowerPoint file for offline use or editing
+
 ## 📋 Presentation Content
 
 This presentation covers the following sections:
@@ -23,7 +28,12 @@ This presentation covers the following sections:
 
 ## 🚀 How to View the Presentation
 
-### Option 1: View Online (Easiest)
+### PowerPoint Version
+Simply open `QA_Testing_Presentation.pptx` in Microsoft PowerPoint, Google Slides, or any compatible application. This version is ready to present or edit offline.
+
+### Web Version (HTML)
+
+#### Option 1: View Online (Easiest)
 Simply open `index.html` in any modern web browser:
 ```bash
 # Open directly in browser
@@ -32,8 +42,8 @@ xdg-open index.html    # Linux
 start index.html       # Windows
 ```
 
-### Option 2: Run with Local Web Server (Recommended)
-For the best experience, serve the presentation through a local web server:
+### Option 2: Run with Local Web Server (Recommended for HTML)
+For the best experience with the web version, serve the presentation through a local web server:
 
 ```bash
 # Using Python 3
