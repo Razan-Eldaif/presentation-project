@@ -242,12 +242,12 @@
                         <p>Consider a simple calculator with two 32-bit integers:</p>
                         <div style="background: #2c3e50; padding: 20px; border-radius: 10px; margin: 20px 0;">
                             <p><strong>Possible test cases:</strong></p>
-                            <p style="color: #42affa; font-size: 1.2em;">2³² × 2³² = 18,446,744,073,709,551,616 combinations</p>
-                            <p><em>That's over 18 quintillion test cases!</em></p>
+                            <p style="color: #42affa; font-size: 1.2em;">(2³²)² = 2⁶⁴ ≈ 18.4 quintillion combinations</p>
+                            <p><em>That's 18,446,744,073,709,551,616 test cases!</em></p>
                         </div>
                         <ul style="font-size: 0.9em;">
-                            <li>Testing at 1 million cases per second = <strong>584,942 years</strong></li>
-                            <li>Even with 4 operations (+, -, ×, ÷) = <strong>2.3 million years</strong></li>
+                            <li>Testing at 1 million cases/sec: 18.4×10¹⁸ ÷ 10⁶/sec ÷ 31.5M sec/year = <strong>584,942 years</strong></li>
+                            <li>With 4 operations (+, -, ×, ÷) multiply by 4 = <strong>2.3 million years</strong></li>
                         </ul>
                         <br>
                         <p><strong>Conclusion:</strong> Exhaustive testing is impossible for even simple programs!</p>
@@ -336,7 +336,7 @@
                             </tr>
                             <tr>
                                 <td><strong>Methods</strong></td>
-                                <td>Reviews, inspections, walkthroughs</td>
+                                <td>Reviews, inspections, walkthroughs, static analysis</td>
                                 <td>Testing, user acceptance</td>
                             </tr>
                             <tr>
